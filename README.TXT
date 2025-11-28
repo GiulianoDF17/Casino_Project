@@ -12,3 +12,4 @@ AUTHORS:
 USER INSTRUCTIONS:
 
 First Commit : Giuliano Di Fulvio
+Second Commit: Daniel Corcuera Lodico
