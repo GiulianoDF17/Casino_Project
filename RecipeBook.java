@@ -1,33 +1,81 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-/**
- * Write a description of class RecipeBook here.
- *
- * @author Giuliano Di Fulvio & Daniel Corcuera Lodico
- * @version (a version number or a date)
- */
+
 public class RecipeBook
 {
-    // instance variables - replace the example below with your own
-    private int x;
 
-    /**
-     * Constructor for objects of class RecipeBook
-     */
-    public RecipeBook()
-    {
-        // initialise instance variables
-        x = 0;
+    private HashMap<String, Recipes> recipes;
+
+    public RecipeBook() {
+        recipes = new HashMap<>();
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public void addRecipe(String name, String ingredientString, Recipes recipe)
     {
-        // put your code here
-        return x + y;
+        ArrayList<String> ingredientList = new ArrayList<>();
+        for (String ingredient : ingredientString.split(",")) {
+            ingredientList.add(ingredient.trim());
+        }
+
+        recipe.setIngredients(ingredientList);
+        recipes.put(name, recipe);
+    }
+
+    public void showBookDetails() {
+        if (recipes.isEmpty()) {
+            System.out.println("The recipe book is empty.");
+            return;
+        }
+    }
+    
+    public void removeRecipe(String name) {
+        if (recipes.remove(name) != null) {
+            System.out.println("Removed recipe: " + name);
+        } else {
+            System.out.println("Recipe not found: " + name);
+        }
+    }
+    
+    public int getRecipeCount() {
+        return recipes.size();
+    }
+  
+    public void searchRecipeName(String search) {
+        boolean found = false;
+        Iterator<String> it = recipes.keySet().iterator();
+        boolean tryAgain = true;
+        while (tryAgain){
+        while (it.hasNext()) {
+            String name = it.next();
+            if (name.toLowerCase().contains(search.toLowerCase())) {
+                System.out.println("Found: " + name);
+                found = true;
+                tryAgain = false;
+            }
+        }
+        if (!found) {
+            System.out.println("No recipes match your search.");
+            System.out.println("Please try again");
+        }
+      }
+    }
+
+    private void listByType(String title, Class<?> type) {
+        boolean found = false;
+    }
+
+    public void listDesserts() {
+        listByType("Desserts", Desserts.class);
+    }
+
+    public void listAppetizers() {
+        listByType("Appetiers", Appetizer.class);
+    }
+
+    public void listMainDishes() {
+        listByType("MainDishes", MainDish.class);
     }
 }

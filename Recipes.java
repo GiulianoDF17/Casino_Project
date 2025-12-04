@@ -1,20 +1,38 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class Recipes here.
  *
  * @author Daniel Corcuera Lodico
  * @version (a version number or a date)
  */
-public class Recipes  extends RecipeBook
+
+
+public class Recipes 
 {
-    // instance variables - replace the example below with your own
+    private String name;
+    private ArrayList<String> ingredients;
 
-    /**
-     * Constructor for objects of class Recipes
-     */
-    public Recipes()
-    {
-        // initialise instance variables
-
+    public Recipes(String name) {
+        this.name = name;
+        this.ingredients = new ArrayList<>();
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String newName) {
+        this.name = newName;
+    }
+    
+    public ArrayList<String> getIngredients() {
+        return ingredients;
+    }
+    
+    public void removeingredients(ArrayList<String> ingList){
+        
+    }
+    public void addIngredients(ArrayList<String> ingList) {
+        this.ingredients = ingList;
     }
 }
