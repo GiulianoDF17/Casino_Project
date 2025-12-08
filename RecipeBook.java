@@ -44,6 +44,10 @@ public class RecipeBook
         }
     }
     
+    public int getSize(){
+        return recipes.size();
+    }
+    
     public int getRecipeCount() {
         return recipes.size();
     }

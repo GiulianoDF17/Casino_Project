@@ -13,12 +13,8 @@ import org.junit.jupiter.api.Test;
  */
 public class Tests
 {
-    /**
-     * Default constructor for test class Tests
-     */
-    public Tests()
-    {
-    }
+    private RecipeBook book;
+    private Recipes recipe;
 
     /**
      * Sets up the test fixture.
@@ -26,17 +22,14 @@ public class Tests
      * Called before every test case method.
      */
     @BeforeEach
-    public void setUp()
-    {
+    public void setUp(){
+        book = new RecipeBook();
+        recipe = new Recipes("Pizza");
     }
 
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
-    @AfterEach
-    public void tearDown()
-    {
+    @Test
+    public void testAddRecipe(){
+        book.addRecipe("Pizza", "Flour 5 cups, Eggs 2", recipe);
+        assertEquals(1, book.getSize());
     }
 }
