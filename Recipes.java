@@ -35,7 +35,7 @@ public class Recipes
     }
     
     public void removeIngredients(String ingredientName){
-        ingredients.remove();
+        ingredients.remove(ingredientName);
     }
     
     public void editIngredient(String ingredientName, String newName, double newAmount, Measurements newMeasurement) {

@@ -25,7 +25,7 @@ public class RecipeBook
             ingredientList.add(ingredient.trim());
         }
 
-        recipe.setIngredients(ingredientList);
+       
         recipes.put(name, recipe);
     }
 
