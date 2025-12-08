@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Recipes 
 {
     private String name;
+    private Steps steps;
     private ArrayList<Ingredient> ingredients;
 
     public Recipes(String name) {
