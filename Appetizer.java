@@ -7,27 +7,18 @@
  */
 public class Appetizer extends Recipes
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Appetizer
-     */
-    public Appetizer()
-    {
-        // initialise instance variables
-        x = 0;
+    private String flavorType;
+    
+    public Appetizer(String name, String flavorType){
+        super(name);
+        this.flavorType = flavorType;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    public String getFlavorType(){
+        return flavorType;
+    }
+    
+    public void listFlavor(){
+        System.out.println(getName() + " has a " + flavorType + " flavor.");
     }
 }

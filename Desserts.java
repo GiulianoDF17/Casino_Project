@@ -7,27 +7,18 @@
  */
 public class Desserts extends Recipes
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Desserts
-     */
-    public Desserts()
-    {
-        // initialise instance variables
-        x = 0;
+    private int sugarGrams;
+    
+    public Desserts(String name, int sugarGrams){
+        super(name);
+        this.sugarGrams = sugarGrams;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    public int getSugarGrams(){
+        return sugarGrams;
+    }
+    
+    public void listSugar(){
+        System.out.println(getName() + " contains " + sugarGrams + "g of sugar.");
     }
 }

@@ -7,7 +7,18 @@
  */
 public class MainDish extends Recipes
 {
+    private String spicyness;
     
-
-
+    public MainDish(String name, String spicyness){
+        super(name);
+        this.spicyness = spicyness;
+    }
+    
+    public String getSpicyness(){
+        return spicyness;
+    }
+    
+    public void listSpicyness(){
+        System.out.println(getName() + " has " + spicyness + " scoville units.");
+    }
 }

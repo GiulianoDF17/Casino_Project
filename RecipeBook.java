@@ -72,7 +72,7 @@ public class RecipeBook
     }
 
     public void listAppetizers() {
-        listByType("Appetiers", Appetizer.class);
+        listByType("Appetizers", Appetizer.class);
     }
 
     public void listMainDishes() {
