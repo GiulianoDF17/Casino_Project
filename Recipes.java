@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Recipes 
 {
     private String name;
-    private ArrayList<String> ingredients;
+    private ArrayList<Ingredient> ingredients;
 
     public Recipes(String name) {
         this.name = name;
@@ -25,14 +25,26 @@ public class Recipes
         this.name = newName;
     }
     
-    public ArrayList<String> getIngredients() {
+    public ArrayList<Ingredient> getIngredients() {
         return ingredients;
     }
-    
-    public void removeingredients(ArrayList<String> ingList){
-        
+
+    public void addIngredient(Ingredient ingredient) {
+        ingredients.add(ingredient);
     }
-    public void addIngredients(ArrayList<String> ingList) {
-        this.ingredients = ingList;
+    
+    public void removeIngredients(String ingredientName){
+        ingredients.remove();
+    }
+    
+    public void editIngredient(String ingredientName, String newName, double newAmount, Measurements newMeasurement) {
+        for (Ingredient i : ingredients) {
+            if (i.getName().equalsIgnoreCase(ingredientName)) {
+                i.setName(newName);
+                i.setAmount(newAmount);
+                i.setMeasurement(newMeasurement);
+                return;
+            }
+        }
     }
 }

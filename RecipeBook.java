@@ -3,7 +3,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-
+/**
+ * Write a description of class Appetizer here.
+ *
+ * @author Giuliano Di Fulvio & Daniel Corcuera Lodico
+ * @version (a version number or a date)
+ */
 public class RecipeBook
 {
 
