@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
+import java.util.Scanner;
 
 /**
  * Write a description of class Appetizer here.
@@ -13,22 +13,46 @@ public class RecipeBook
 {
 
     private HashMap<String, Recipes> recipes;
+    Scanner myobj = new Scanner (System.in);
+    Ingredient ingredients = new Ingredient("default");
 
     public RecipeBook() {
         recipes = new HashMap<>();
     }
 
-    public void addRecipe(String name, String ingredientString, Recipes recipe)
-    {
-        ArrayList<String> ingredientList = new ArrayList<>();
-        for (String ingredient : ingredientString.split(",")) {
-            ingredientList.add(ingredient.trim());
+    public void addRecipe() {
+        System.out.println("What is the recipe name?");
+        String recipeName = myobj.nextLine().trim();
+        Recipes recipe = new Recipes(recipeName);
+
+        boolean addingIngredients = true;
+        while(addingIngredients){
+            String ingredientInput = ingredients.setName();
+             if(ingredientInput.equalsIgnoreCase("done")){
+                addingIngredients = false;
+            } else {
+                for (String ing : ingredientInput.split(",")) {
+                  recipe.addIngredient(new Ingredient(ing.trim()));
+                }
+            }
         }
 
-       
-        recipes.put(name, recipe);
+        recipes.put(recipeName.toLowerCase(), recipe);
+        System.out.println("Recipe added!");
     }
 
+     public void listAllRecipes() {
+        if (recipes.isEmpty()) {
+            System.out.println("No recipes in the book.");
+            return;
+        }
+        System.out.println("Recipes:");
+        for(String recipeName : recipes.keySet()){
+            System.out.print(recipeName);
+        }
+        System.out.println();
+    }
+    
     public void showBookDetails() {
         if (recipes.isEmpty()) {
             System.out.println("The recipe book is empty.");
@@ -52,14 +76,16 @@ public class RecipeBook
         return recipes.size();
     }
   
-    public void searchRecipeName(String search) {
+    public void searchRecipeName() {
+        System.out.println("What is the recipe name?");
+        String recipeSearch = myobj.nextLine().trim().toLowerCase();
         boolean found = false;
         Iterator<String> it = recipes.keySet().iterator();
         boolean tryAgain = true;
         while (tryAgain){
         while (it.hasNext()) {
             String name = it.next();
-            if (name.toLowerCase().contains(search.toLowerCase())) {
+            if (name.toLowerCase().contains(recipeSearch.toLowerCase())) {
                 System.out.println("Found: " + name);
                 found = true;
                 tryAgain = false;

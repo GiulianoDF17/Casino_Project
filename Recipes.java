@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  * Write a description of class Recipes here.
  *
@@ -12,7 +14,56 @@ public class Recipes
     private String name;
     private Steps steps;
     private ArrayList<Ingredient> ingredients;
-
+    public static void main(String[] args){
+        boolean run = true;
+        Scanner myobj = new Scanner (System.in);
+        RecipeBook recipebook = new RecipeBook();
+        
+         while (run) {
+        System.out.println();
+        System.out.println("What would you like to do?");
+        System.out.println();
+        System.out.println("1. Add a recipe");
+        System.out.println("2. List all recipes");
+        System.out.println("3. Print recipe Details");
+        System.out.println("4. List by type");
+        System.out.println("5. Rate a recipe");
+        System.out.println("6. Search by title or ingredient");
+        System.out.println("7. List top rated recipe");
+        System.out.println("8. Exit");
+        System.out.println();
+        System.out.print("Choice: ");
+        
+        int choice = myobj.nextInt();
+        System.out.println();
+        switch(choice){
+            case 1:
+                recipebook.addRecipe();
+                break;
+            case 2:
+                recipebook.listAllRecipes();
+                break;
+            case 3:
+                recipebook.searchRecipeName();
+                break;
+            case 4:    
+                
+                break;
+            case 5:    
+                
+                break;
+            case 6:  
+                System.out.println("Goodbye!");
+                run = false;
+                break;
+            
+            default:    
+                System.out.println("That is not a correct number");
+                System.out.println("Please choose a number from 1-6");
+                System.out.println();
+        }
+      }
+    }
     public Recipes(String name) {
         this.name = name;
         this.ingredients = new ArrayList<>();
@@ -38,14 +89,5 @@ public class Recipes
         ingredients.remove(ingredientName);
     }
     
-    public void editIngredient(String ingredientName, String newName, double newAmount, Measurements newMeasurement) {
-        for (Ingredient i : ingredients) {
-            if (i.getName().equalsIgnoreCase(ingredientName)) {
-                i.setName(newName);
-                i.setAmount(newAmount);
-                i.setMeasurement(newMeasurement);
-                return;
-            }
-        }
-    }
+   
 }

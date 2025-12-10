@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 /**
  * Write a description of class Ingredient here.
  *
@@ -10,13 +10,11 @@ public class Ingredient
     private String name;
     private double amount;
     private Measurements measurement;
+    Scanner myobj = new Scanner (System.in);
     
-    public Ingredient(String name, double amount, Measurements measurement){
+    public Ingredient(String name){
         this.name = name;
-        this.amount = amount;
-        this.measurement = measurement;
     }
-    
     public String getName(){
         return name;
     }
@@ -29,8 +27,10 @@ public class Ingredient
         return measurement;
     }
     
-    public void setName(String name){
-        this.name = name;
+    public String setName(){
+        System.out.println("What are the ingredients?");
+        String ingredientName = myobj.nextLine().trim().toLowerCase();
+        return(ingredientName);
     }
     
     public void setAmount(double amount){
