@@ -14,6 +14,7 @@ public class Recipe
     private String name;
     private Steps steps;
     private ArrayList<Ingredient> ingredients;
+    private int rating;
     public static void main(String[] args){
         boolean run = true;
         Scanner myobj = new Scanner (System.in);
@@ -45,14 +46,21 @@ public class Recipe
                 break;
             case 3:
                 recipebook.searchRecipeName();
+                
                 break;
             case 4:    
                 
                 break;
             case 5:    
+                recipebook.rateRecipe();
+                break;
+            case 6:    
                 
                 break;
-            case 6:  
+            case 7:    
+                recipebook.listTopRated();
+                break;
+            case 8:  
                 System.out.println("Goodbye!");
                 run = false;
                 break;
@@ -64,30 +72,27 @@ public class Recipe
         }
       }
     }
+    
     public Recipe(String name) {
         this.name = name;
         this.ingredients = new ArrayList<>();
+        this.rating = 0;
+    }
+    
+        public void setRating(int rating){
+        this.rating = rating;
+    }
+    
+    public int getRating(){
+        return rating;
     }
     
     public String getName() {
         return name;
     }
     
-    public void setName(String newName) {
-        this.name = newName;
-    }
-    
-    public ArrayList<Ingredient> getIngredients() {
-        return ingredients;
-    }
 
     public void addIngredient(Ingredient ingredient) {
         ingredients.add(ingredient);
-    }
-    
-    public void removeIngredients(String ingredientName){
-        ingredients.remove(ingredientName);
-    }
-    
-   
+    } 
 }

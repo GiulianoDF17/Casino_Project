@@ -11,7 +11,6 @@ import java.util.Scanner;
  */
 public class RecipeBook
 {
-
     private HashMap<String, Recipe> recipes;
     Scanner myobj = new Scanner (System.in);
     Ingredient ingredients = new Ingredient("default");
@@ -22,13 +21,13 @@ public class RecipeBook
 
     public void addRecipe() {
         System.out.println("What is the recipe name?");
-        String recipeName = myobj.nextLine().trim();
+        String recipeName = myobj.nextLine().trim().toLowerCase();
         Recipe recipe = new Recipe(recipeName);
 
         boolean addingIngredients = true;
         while(addingIngredients){
             String ingredientInput = ingredients.setName();
-             if(ingredientInput.equalsIgnoreCase("done")){
+             if(ingredientInput.equals("done")){
                 addingIngredients = false;
             } else {
                 for (String ing : ingredientInput.split(",")) {
@@ -61,8 +60,42 @@ public class RecipeBook
     }
     
     public void rateRecipe(){
+        String recipeName = myobj.nextLine().trim().toLowerCase();
+        Recipe recipe = recipes.get(recipeName);
         
+        if(recipe == null){
+            System.out.println("Recipe not found");
+            return;
+        }
         
+        System.out.println("Enter a rating from 1-5");
+        int ratingValue;
+        
+        while(true){
+            ratingValue = Integer.parseInt(myobj.nextLine().trim());
+                
+            if(ratingValue >= 1 && ratingValue <= 5){
+                recipe.setRating(ratingValue);
+                break;
+            }else{
+                System.out.println("Please enter a number between 1-5");
+            }
+        }
+    }
+    
+    public void listTopRated(){
+        Iterator<Recipe> it =recipes.values().iterator();
+        Recipe topRecipe = it.next();
+        int highestRating = topRecipe.getRating();
+        while (it.hasNext()) {
+            Recipe current = it.next();
+            if (current.getRating() > highestRating){
+                highestRating = current.getRating();
+                topRecipe = current;
+            }
+        }
+        System.out.println();
+        System.out.println("The top rated recipe is: " + topRecipe.getName() + highestRating);
     }
     
     public int getSize(){

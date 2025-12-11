@@ -26,10 +26,4 @@ public class Tests
         book = new RecipeBook();
         recipe = new Recipe("Pizza");
     }
-
-    @Test
-    public void testAddRecipe(){
-        book.addRecipe("Pizza", "Flour 5 cups, Eggs 2", recipe);
-        assertEquals(1, book.getSize());
-    }
 }
