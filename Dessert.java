@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 /**
  * Write a description of class Desserts here.
  *
@@ -8,13 +8,14 @@
 public class Dessert extends Recipe
 {
     private int sugarGrams;
-    
+    Scanner myobj = new Scanner (System.in);
     public Dessert(String name, int sugarGrams){
         super(name);
         this.sugarGrams = sugarGrams;
     }
     
     public int getSugarGrams(){
+        int sugarGrams = myobj.nextInt();
         return sugarGrams;
     }
     

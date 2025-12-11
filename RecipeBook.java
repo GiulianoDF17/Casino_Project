@@ -14,7 +14,8 @@ public class RecipeBook
     private HashMap<String, Recipe> recipes;
     Scanner myobj = new Scanner (System.in);
     Ingredient ingredients = new Ingredient("default");
-
+    MainDish mainDish = null;
+    Dessert dessert = null;
     public RecipeBook() {
         recipes = new HashMap<>();
     }
@@ -23,10 +24,22 @@ public class RecipeBook
         System.out.println("What is the recipe name?");
         String recipeName = myobj.nextLine().trim().toLowerCase();
         Recipe recipe = new Recipe(recipeName);
-
+        System.out.println("What type of dish is it?");
+        String dishType = myobj.nextLine().trim().toLowerCase();
+        if(dishType.equals("main dish") || dishType.equals("main")){
+            System.out.println("Spice level(Scoville units): ");
+            int spiceLevel = mainDish.getSpicyness();
+            
+        }
+        if(dishType.equals("dessert") || dishType.equals("desert")){
+            System.out.println("Grams of Sugar: ");
+            int sugarGrams = dessert.getSugarGrams();
+            
+        }
         boolean addingIngredients = true;
+        String ingredientInput = ingredients.setName();
         while(addingIngredients){
-            String ingredientInput = ingredients.setName();
+            String ingredientInput2 = ingredients.setMoreNames();
              if(ingredientInput.equals("done")){
                 addingIngredients = false;
             } else {
@@ -46,9 +59,13 @@ public class RecipeBook
             return;
         }
         System.out.println("Recipes:");
+        int i = 0;
         for(String recipeName : recipes.keySet()){
-            System.out.print(recipeName);
+            System.out.println(i + ". " + recipeName);
+            i++;
         }
+        System.out.println("Click ENTER when done");
+        String enter = myobj.nextLine();
         System.out.println();
     }
     
@@ -112,14 +129,18 @@ public class RecipeBook
         boolean found = false;
         Iterator<String> it = recipes.keySet().iterator();
         boolean tryAgain = true;
+        int spiceLevel = mainDish.getSpicyness();
         while (tryAgain){
         while (it.hasNext()) {
             String name = it.next();
             if (name.toLowerCase().contains(recipeSearch.toLowerCase())) {
                 System.out.println("Found: " + name);
+                System.out.println("Ingredients: " + recipes.get(name));
+                System.out.println("Spice level = " + spiceLevel + " scoville units");
                 found = true;
                 tryAgain = false;
             }
+            
         }
         if (!found) {
             System.out.println("No recipes match your search.");

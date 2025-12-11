@@ -29,6 +29,13 @@ public class Ingredient
     
     public String setName(){
         System.out.println("What are the ingredients?");
+        
+        String ingredientName = myobj.nextLine().trim().toLowerCase();
+        return(ingredientName);
+    }
+    public String setMoreNames(){
+        System.out.println("Anything else?");
+        
         String ingredientName = myobj.nextLine().trim().toLowerCase();
         return(ingredientName);
     }
