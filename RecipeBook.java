@@ -60,12 +60,8 @@ public class RecipeBook
         }
     }
     
-    public void removeRecipe(String name) {
-        if (recipes.remove(name) != null) {
-            System.out.println("Removed recipe: " + name);
-        } else {
-            System.out.println("Recipe not found: " + name);
-        }
+    public void rateRecipe(){
+        
     }
     
     public int getSize(){
