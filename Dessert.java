@@ -5,11 +5,11 @@
  * @author Giuliano Di Fulvio
  * @version (a version number or a date)
  */
-public class Desserts extends Recipes
+public class Dessert extends Recipe
 {
     private int sugarGrams;
     
-    public Desserts(String name, int sugarGrams){
+    public Dessert(String name, int sugarGrams){
         super(name);
         this.sugarGrams = sugarGrams;
     }

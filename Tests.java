@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 public class Tests
 {
     private RecipeBook book;
-    private Recipes recipe;
+    private Recipe recipe;
 
     /**
      * Sets up the test fixture.
@@ -24,7 +24,7 @@ public class Tests
     @BeforeEach
     public void setUp(){
         book = new RecipeBook();
-        recipe = new Recipes("Pizza");
+        recipe = new Recipe("Pizza");
     }
 
     @Test

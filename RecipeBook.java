@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class RecipeBook
 {
 
-    private HashMap<String, Recipes> recipes;
+    private HashMap<String, Recipe> recipes;
     Scanner myobj = new Scanner (System.in);
     Ingredient ingredients = new Ingredient("default");
 
@@ -23,7 +23,7 @@ public class RecipeBook
     public void addRecipe() {
         System.out.println("What is the recipe name?");
         String recipeName = myobj.nextLine().trim();
-        Recipes recipe = new Recipes(recipeName);
+        Recipe recipe = new Recipe(recipeName);
 
         boolean addingIngredients = true;
         while(addingIngredients){
@@ -62,6 +62,7 @@ public class RecipeBook
     
     public void rateRecipe(){
         
+        
     }
     
     public int getSize(){
@@ -99,7 +100,7 @@ public class RecipeBook
     }
 
     public void listDesserts() {
-        listByType("Desserts", Desserts.class);
+        listByType("Desserts", Dessert.class);
     }
 
     public void listAppetizers() {

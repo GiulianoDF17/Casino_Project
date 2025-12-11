@@ -5,7 +5,7 @@
  * @author Giuliano Di Fulvio
  * @version (a version number or a date)
  */
-public class Appetizer extends Recipes
+public class Appetizer extends Recipe
 {
     private String flavorType;
     

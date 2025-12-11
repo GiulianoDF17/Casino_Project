@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 
 
-public class Recipes 
+public class Recipe 
 {
     private String name;
     private Steps steps;
@@ -59,12 +59,12 @@ public class Recipes
             
             default:    
                 System.out.println("That is not a correct number");
-                System.out.println("Please choose a number from 1-6");
+                System.out.println("Please choose a number from 1-8");
                 System.out.println();
         }
       }
     }
-    public Recipes(String name) {
+    public Recipe(String name) {
         this.name = name;
         this.ingredients = new ArrayList<>();
     }

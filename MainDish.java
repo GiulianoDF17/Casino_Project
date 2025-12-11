@@ -5,7 +5,7 @@
  * @author Giuliano Di Fulvio
  * @version (a version number or a date)
  */
-public class MainDish extends Recipes
+public class MainDish extends Recipe
 {
     private String spicyness;
     
