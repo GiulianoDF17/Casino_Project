@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 /**
  * Write a description of class MainDish here.
@@ -8,13 +9,14 @@
 public class MainDish extends Recipe
 {
     private String spicyness;
-    
+    Scanner myobj = new Scanner (System.in);
     public MainDish(String name, String spicyness){
         super(name);
         this.spicyness = spicyness;
     }
     
-    public String getSpicyness(){
+    public int getSpicyness(){
+        int spicyness = myobj.nextInt();
         return spicyness;
     }
     

@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 /**
  * Write a description of class Appetizer here.
@@ -8,7 +9,7 @@
 public class Appetizer extends Recipe
 {
     private String flavorType;
-    
+    Scanner myobj = new Scanner (System.in);
     public Appetizer(String name, String flavorType){
         super(name);
         this.flavorType = flavorType;
