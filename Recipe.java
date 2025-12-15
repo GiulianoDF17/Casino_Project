@@ -49,13 +49,13 @@ public class Recipe
                 
                 break;
             case 4:    
-                
+                recipebook.listByType();
                 break;
             case 5:    
                 recipebook.rateRecipe();
                 break;
             case 6:    
-                
+                recipebook.searchByTitleOrIngredient();
                 break;
             case 7:    
                 recipebook.listTopRated();

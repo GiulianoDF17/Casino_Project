@@ -14,13 +14,15 @@ public class RecipeBook
     private HashMap<String, Recipe> recipes;
     Scanner myobj = new Scanner (System.in);
     Ingredient ingredients = new Ingredient("default");
-    MainDish mainDish = null;
-    Dessert dessert = null;
+    
     public RecipeBook() {
         recipes = new HashMap<>();
     }
 
     public void addRecipe() {
+        MainDish mainDish = new MainDish();
+        Dessert dessert = new Dessert();
+        
         System.out.println("What is the recipe name?");
         String recipeName = myobj.nextLine().trim().toLowerCase();
         Recipe recipe = new Recipe(recipeName);
@@ -28,13 +30,18 @@ public class RecipeBook
         String dishType = myobj.nextLine().trim().toLowerCase();
         if(dishType.equals("main dish") || dishType.equals("main")){
             System.out.println("Spice level(Scoville units): ");
-            int spiceLevel = mainDish.getSpicyness();
-            
+            String spiceLevel = mainDish.getSpicyness();
+            recipe = new MainDish(recipeName, spiceLevel);
         }
         if(dishType.equals("dessert") || dishType.equals("desert")){
             System.out.println("Grams of Sugar: ");
             int sugarGrams = dessert.getSugarGrams();
-            
+            recipe = new Dessert(recipeName, sugarGrams);            
+        }
+        if(dishType.equals("Appetizer") || dishType.equals("desert")){
+            System.out.println("Flavor type: ");
+            String flavorType = Appetizer.getFlavorType();
+            recipe = new Appetizer(recipeName);            
         }
         boolean addingIngredients = true;
         String ingredientInput = ingredients.setName();
@@ -51,14 +58,6 @@ public class RecipeBook
 
         recipes.put(recipeName.toLowerCase(), recipe);
         System.out.println("Recipe added!");
-    }
-
-    public void doubleArray(){
-        int[] original = new int[100];
-        int[] doubled = new int[100];
-        for(int i = 0; i < original.length; i++){
-            doubled[i] = original[i] * 2;
-        }
     }
     
      public void listAllRecipes() {
@@ -109,6 +108,10 @@ public class RecipeBook
     }
     
     public void listTopRated(){
+        if (recipes.isEmpty()) {
+            System.out.println("No recipes available.");
+            return;
+        }
         Iterator<Recipe> it =recipes.values().iterator();
         Recipe topRecipe = it.next();
         int highestRating = topRecipe.getRating();
@@ -120,7 +123,7 @@ public class RecipeBook
             }
         }
         System.out.println();
-        System.out.println("The top rated recipe is: " + topRecipe.getName() + highestRating);
+        System.out.println("The top rated recipe is: " + topRecipe.getName() +" : " + highestRating);
     }
     
     public int getSize(){
@@ -132,33 +135,42 @@ public class RecipeBook
     }
   
     public void searchRecipeName() {
-        System.out.println("What is the recipe name?");
-        String recipeSearch = myobj.nextLine().trim().toLowerCase();
-        boolean found = false;
-        Iterator<String> it = recipes.keySet().iterator();
-        boolean tryAgain = true;
-        int spiceLevel = mainDish.getSpicyness();
-        while (tryAgain){
-        while (it.hasNext()) {
-            String name = it.next();
-            if (name.toLowerCase().contains(recipeSearch.toLowerCase())) {
-                System.out.println("Found: " + name);
-                System.out.println("Ingredients: " + recipes.get(name));
-                System.out.println("Spice level = " + spiceLevel + " scoville units");
-                found = true;
-                tryAgain = false;
+      System.out.println("What is the recipe name?");
+      String recipeSearch = myobj.nextLine().trim().toLowerCase();
+      boolean found = false;
+      boolean tryAgain = true;
+      int spiceLevel = mainDish.getSpicyness();
+        
+         for (Recipe recip : recipes.values()) {
+           if (recip.getName().contains(recipeSearch)) {
+              System.out.println("Found: " + recip.getName());
+              System.out.println("Ingredients: " + recip.getIngredients());
+              found = true;
             }
-            
         }
         if (!found) {
             System.out.println("No recipes match your search.");
             System.out.println("Please try again");
         }
-      }
+      
     }
 
-    private void listByType(String title, Class<?> type) {
-        boolean found = false;
+    public void searchByTitleOrIngredient(){
+        
+    }
+    private void listByType(String name, Class<?> type) {
+       System.out.println(name + ": ");
+       boolean found = false;
+       for (Recipe r : recipes.values()) {
+        if (type.isInstance(r)) {
+            System.out.println(r.getName());
+            found = true;
+        }
+       }
+       if (!found) {
+            System.out.println("No recipes match your search.");
+            System.out.println("Please try again");
+        }
     }
 
     public void listDesserts() {

@@ -15,8 +15,8 @@ public class MainDish extends Recipe
         this.spicyness = spicyness;
     }
     
-    public int getSpicyness(){
-        int spicyness = myobj.nextInt();
+    public String getSpicyness(){
+        String spicyness = myobj.nextLine();
         return spicyness;
     }
     
