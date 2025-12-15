@@ -40,6 +40,14 @@ public class RecipeBook
         System.out.println("Recipe added!");
     }
 
+    public void doubleArray(){
+        int[] original = new int[100];
+        int[] doubled = new int[100];
+        for(int i = 0; i < original.length; i++){
+            doubled[i] = original[i] * 2;
+        }
+    }
+    
      public void listAllRecipes() {
         if (recipes.isEmpty()) {
             System.out.println("No recipes in the book.");
