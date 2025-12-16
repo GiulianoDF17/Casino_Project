@@ -13,3 +13,13 @@ USER INSTRUCTIONS:
 
 First Commit : Giuliano Di Fulvio
 Second Commit: Daniel Corcuera Lodico
+
+How to run outside of BlueJ:
+
+1. Open command prompt (Windows + R)
+2. Change the directory to the path of the project using (cd directory)
+3. Compile the program by doing (javac Recipe.java)
+4. Run the program by doing (java Recipe)
+5. Done!
+
+
