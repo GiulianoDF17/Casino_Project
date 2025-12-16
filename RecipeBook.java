@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class RecipeBook
 {
     private HashMap<String, Recipe> recipes;
+    private int rating;
     Scanner myobj = new Scanner (System.in);
     
     public RecipeBook() {
@@ -177,5 +178,9 @@ public class RecipeBook
                 found = true;
             }
         }
+    }
+    
+    public int getRecipeRating(){
+        return rating;
     }
 }
