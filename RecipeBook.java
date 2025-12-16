@@ -18,7 +18,8 @@ public class RecipeBook
     public RecipeBook() {
         recipes = new HashMap<>();
     }
-
+    
+    //Daniel
     public void addRecipe() {
         System.out.println("What is the recipe name?");
         String recipeName = myobj.nextLine().trim().toLowerCase();
@@ -52,8 +53,8 @@ public class RecipeBook
         System.out.println("Recipe added!");
     }
 
-    
-     public void listAllRecipes() {
+    //Daniel
+    public void listAllRecipes() {
         if (recipes.isEmpty()) {
             System.out.println("No recipes in the book.");
             return;
@@ -71,13 +72,15 @@ public class RecipeBook
         System.out.println();
     }
     
+    //Giuliano
     public void showBookDetails() {
-        if (recipes.isEmpty()) {
-            System.out.println("The recipe book is empty.");
-            return;
-        }
+        System.out.println("Recipe Book Details");
+        System.out.println("Authour: Giuliano Di Fulvio & Daniel Corcuera Lodico");
+        System.out.println("Date Created: December 10th, 2025");
+        System.out.println("Total Recipes: " + recipes.size());
     }
     
+    //Daniel
     public void rateRecipe(){
         System.out.println("Which recipe would you like to rate?");
         String recipeName = myobj.nextLine().trim().toLowerCase();
@@ -104,6 +107,7 @@ public class RecipeBook
         System.out.println("Done!");
     }
     
+    //Daniel
     public void listTopRated(){
         Iterator<Recipe> it = recipes.values().iterator();
         Recipe topRecipe = it.next();
@@ -119,20 +123,23 @@ public class RecipeBook
         System.out.println("The top rated recipe is: " + topRecipe.getName() +" : " + highestRating + "/5");
     }
     
+    //Giuliano
     public int getSize(){
         return recipes.size();
     }
     
+    //Giuliano
     public int getRecipeCount() {
         return recipes.size();
     }
-  
+      
+    //Giuliano
     public void searchRecipeName() {
       System.out.println("What is the recipe name?");
       String recipeSearch = myobj.nextLine().trim().toLowerCase();
       boolean found = false;
         
-         for (Recipe recip : recipes.values()) {
+        for (Recipe recip : recipes.values()) {
            if (recip.getName().contains(recipeSearch)) {
               System.out.println("Found: " + recip.getName());
               System.out.println("Ingredients: " + recip.getIngredients());
@@ -145,7 +152,8 @@ public class RecipeBook
         }
       
     }
-
+    
+    //Giuliano
     public void searchByIngredient(){
         System.out.println("Enter ingredient name to search: ");
         String search = myobj.nextLine().trim().toLowerCase();
@@ -164,6 +172,7 @@ public class RecipeBook
         }
     }
     
+    //Giuliano
     public void listByType(){
         System.out.println("Which type do you want to list? Main Dish, Appetizer, or Dessert?");
         String typeChoice = myobj.nextLine().trim().toLowerCase();

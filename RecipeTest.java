@@ -1,7 +1,12 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+/**
+ * The test class Tests.
+ *
+ * @author  Daniel Corcuera Lodico
+ * @version (a version number or a date)
+ */
 public class RecipeTest {
 
     private Recipe recipe;

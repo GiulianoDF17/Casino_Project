@@ -12,7 +12,6 @@ import java.util.Scanner;
 public class Recipe 
 {
     private String name;
-    private Steps steps;
     private ArrayList<Ingredient> ingredients;
     private int rating;
     private String type;
@@ -32,7 +31,8 @@ public class Recipe
         System.out.println("5. Rate a recipe");
         System.out.println("6. Search by Ingredient");
         System.out.println("7. List top rated recipe");
-        System.out.println("8. Exit");
+        System.out.println("8. Print recipe details");
+        System.out.println("9. Exit");
         System.out.println();
         System.out.print("Choice: ");
         
@@ -61,7 +61,10 @@ public class Recipe
             case 7:    
                 recipebook.listTopRated();
                 break;
-            case 8:  
+            case 8:
+                recipebook.showBookDetails();
+                break;
+            case 9:  
                 System.out.println("Goodbye!");
                 run = false;
                 break;
