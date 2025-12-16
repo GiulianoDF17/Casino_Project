@@ -17,9 +17,10 @@ Second Commit: Daniel Corcuera Lodico
 How to run outside of BlueJ:
 
 1. Open command prompt (Windows + R)
-2. Change the directory to the path of the project using (cd directory)
-3. Compile the program by doing (javac Recipe.java)
-4. Run the program by doing (java Recipe)
-5. Done!
+2. Install java (if not installed) via this link https://www.oracle.com/java/technologies/downloads/#jdk25-windows
+3. Change the directory to the path of the project using (cd directory)
+4. Compile the program by doing (javac Recipe.java)
+5. Run the program by doing (java Recipe)
+6. Done! ENJOY!!
 
 
