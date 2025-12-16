@@ -107,11 +107,7 @@ public class RecipeBook
     }
     
     public void listTopRated(){
-        if (recipes.isEmpty()) {
-            System.out.println("No recipes available.");
-            return;
-        }
-        Iterator<Recipe> it =recipes.values().iterator();
+        Iterator<Recipe> it = recipes.values().iterator();
         Recipe topRecipe = it.next();
         int highestRating = topRecipe.getRating();
         while (it.hasNext()) {
@@ -152,8 +148,21 @@ public class RecipeBook
       
     }
 
-    public void searchByTitleOrIngredient(){
+    public void searchByIngredient(){
+        System.out.println("enter ingredient name to search: ");
+        String search = myobj.nextLine().trim().toLowerCase();
         
+        boolean foundAny = false;
+        
+        for(Recipe recipe : recipes.values()){
+            for(Ingredient ing : recipe.getIngredients()){
+                if (ing.getName().equals(search)){
+                    System.out.println("- " + recipe.getName());
+                    foundAny = true;
+                    break;
+                }
+            }
+        }
     }
     
     public void listByType(){

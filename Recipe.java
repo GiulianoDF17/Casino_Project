@@ -56,7 +56,7 @@ public class Recipe
                 recipebook.rateRecipe();
                 break;
             case 6:    
-                recipebook.searchByTitleOrIngredient();
+                recipebook.searchByIngredient();
                 break;
             case 7:    
                 recipebook.listTopRated();

@@ -21,6 +21,7 @@ public class Ingredient
     public String toString(){
         return amount + " " + measurement + " " + name;
     }
+    
     public String getName(){
         return name;
     }
@@ -39,6 +40,7 @@ public class Ingredient
         String ingredientName = myobj.nextLine().trim().toLowerCase();
         return(ingredientName);
     }
+    
     public String setMoreNames(){
         System.out.println("Anything else?");
         

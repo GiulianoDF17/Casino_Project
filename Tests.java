@@ -13,7 +13,6 @@ import org.junit.jupiter.api.Test;
  */
 public class Tests
 {
-    private RecipeBook book;
     private Recipe recipe;
 
     /**
@@ -23,6 +22,5 @@ public class Tests
      */
     @BeforeEach
     public void setUp(){
-        book = new RecipeBook();
     }
 }
