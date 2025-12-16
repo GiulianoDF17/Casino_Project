@@ -24,6 +24,5 @@ public class Tests
     @BeforeEach
     public void setUp(){
         book = new RecipeBook();
-        recipe = new Recipe("Pizza");
     }
 }

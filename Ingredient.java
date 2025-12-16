@@ -12,8 +12,14 @@ public class Ingredient
     private Measurements measurement;
     Scanner myobj = new Scanner (System.in);
     
-    public Ingredient(String name){
+    public Ingredient(String name, double amount, Measurements measurement){
         this.name = name;
+        this.amount = amount;
+        this.measurement = measurement;
+    }
+    
+    public String toString(){
+        return amount + " " + measurement + " " + name;
     }
     public String getName(){
         return name;

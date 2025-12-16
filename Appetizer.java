@@ -11,7 +11,7 @@ public class Appetizer extends Recipe
     private String flavorType;
     Scanner myobj = new Scanner (System.in);
     public Appetizer(String name, String flavorType){
-        super(name);
+        super(name, "Appetizer");
         this.flavorType = flavorType;
     }
     

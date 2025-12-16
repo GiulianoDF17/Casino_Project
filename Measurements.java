@@ -7,5 +7,5 @@
  */
 public enum Measurements
 {
-    kg, lbs, ml, cups, spoon, teaspoon
+    KG, LBS, ML, CUPS, SPOON, TEASPOON, NONE
 }

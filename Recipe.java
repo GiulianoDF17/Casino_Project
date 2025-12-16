@@ -15,6 +15,7 @@ public class Recipe
     private Steps steps;
     private ArrayList<Ingredient> ingredients;
     private int rating;
+    private String type;
     public static void main(String[] args){
         boolean run = true;
         Scanner myobj = new Scanner (System.in);
@@ -73,14 +74,19 @@ public class Recipe
       }
     }
     
-    public Recipe(String name) {
+    public Recipe(String name, String type) {
         this.name = name;
         this.ingredients = new ArrayList<>();
+        this.type = type.toLowerCase();
         this.rating = 0;
     }
     
-        public void setRating(int rating){
+    public void setRating(int rating){
         this.rating = rating;
+    }
+    
+    public ArrayList<Ingredient> getIngredients(){
+        return ingredients;
     }
     
     public int getRating(){
@@ -90,8 +96,11 @@ public class Recipe
     public String getName() {
         return name;
     }
-    
 
+    public String getType(){
+        return type;
+    }
+    
     public void addIngredient(Ingredient ingredient) {
         ingredients.add(ingredient);
     } 
