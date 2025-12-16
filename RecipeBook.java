@@ -25,23 +25,15 @@ public class RecipeBook
 
         System.out.println("What type is it? (maindish, appetizer, dessert)");
         String type = myobj.nextLine().trim().toLowerCase();
-
         Recipe recipe = new Recipe(recipeName, type);
-
         System.out.println("Enter ingredients (type 'done' to finish):");
 
         while (true) {
             System.out.print("Ingredient name: ");
             String name = myobj.nextLine().trim().toLowerCase();
-
             if (name.equals("done")) {
                 break;
             }
-
-            System.out.print("Amount: ");
-            double amount = myobj.nextDouble();
-            myobj.nextLine(); 
-
             System.out.println("Measurement options:");
             for (Measurements m : Measurements.values()) {
                 System.out.println("- " + m);
@@ -49,9 +41,10 @@ public class RecipeBook
 
             System.out.print("Measurement: ");
             String measureInput = myobj.nextLine().trim().toUpperCase();
-
             Measurements measurement = Measurements.valueOf(measureInput);
-
+            System.out.print("Amount: ");
+            double amount = myobj.nextDouble();
+            myobj.nextLine(); 
             recipe.addIngredient(new Ingredient(name, amount, measurement));
         }
 
@@ -66,9 +59,11 @@ public class RecipeBook
             return;
         }
         System.out.println("Recipes:");
-        int i = 0;
+        int i = 1;
+        System.out.println();
         for(String recipeName : recipes.keySet()){
             System.out.println(i + ". " + recipeName);
+            System.out.println();
             i++;
         }
         System.out.println("Click ENTER when done");
@@ -84,6 +79,7 @@ public class RecipeBook
     }
     
     public void rateRecipe(){
+        System.out.println("Which recipe would you like to rate?");
         String recipeName = myobj.nextLine().trim().toLowerCase();
         Recipe recipe = recipes.get(recipeName);
         
@@ -105,6 +101,7 @@ public class RecipeBook
                 System.out.println("Please enter a number between 1-5");
             }
         }
+        System.out.println("Done!");
     }
     
     public void listTopRated(){
@@ -119,7 +116,7 @@ public class RecipeBook
             }
         }
         System.out.println();
-        System.out.println("The top rated recipe is: " + topRecipe.getName() +" : " + highestRating);
+        System.out.println("The top rated recipe is: " + topRecipe.getName() +" : " + highestRating + "/5");
     }
     
     public int getSize(){
@@ -150,11 +147,12 @@ public class RecipeBook
     }
 
     public void searchByIngredient(){
-        System.out.println("enter ingredient name to search: ");
+        System.out.println("Enter ingredient name to search: ");
         String search = myobj.nextLine().trim().toLowerCase();
         
         boolean foundAny = false;
-        
+        System.out.println("All recipes with " + search + ":");
+        System.out.println();
         for(Recipe recipe : recipes.values()){
             for(Ingredient ing : recipe.getIngredients()){
                 if (ing.getName().equals(search)){
@@ -167,7 +165,7 @@ public class RecipeBook
     }
     
     public void listByType(){
-        System.out.println("Which type do you want to list? MainDish, Appetizer, or Dessert?");
+        System.out.println("Which type do you want to list? Main Dish, Appetizer, or Dessert?");
         String typeChoice = myobj.nextLine().trim().toLowerCase();
         
         boolean found = false;

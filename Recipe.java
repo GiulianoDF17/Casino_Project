@@ -30,7 +30,7 @@ public class Recipe
         System.out.println("3. Print recipe Details");
         System.out.println("4. List by type");
         System.out.println("5. Rate a recipe");
-        System.out.println("6. Search by title or ingredient");
+        System.out.println("6. Search by Ingredient");
         System.out.println("7. List top rated recipe");
         System.out.println("8. Exit");
         System.out.println();
