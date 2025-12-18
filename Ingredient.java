@@ -34,6 +34,7 @@ public class Ingredient
         return measurement;
     }
     
+    //Daniel
     public String setName(){
         System.out.println("What are the ingredients?");
         
