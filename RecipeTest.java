@@ -40,7 +40,6 @@ public class RecipeTest {
         assertTrue(recipe.getIngredients().isEmpty());
     }
 
-
     @Test
     public void testAddIngredient() {
         Ingredient ingredient = new Ingredient("cheese", 1.0, Measurements.GRAMS);

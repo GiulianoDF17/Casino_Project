@@ -31,7 +31,7 @@ public class Recipe
         System.out.println("5. Rate a recipe");
         System.out.println("6. Search by Ingredient");
         System.out.println("7. List top rated recipe");
-        System.out.println("8. Print recipe details");
+        System.out.println("8. Print book details");
         System.out.println("9. Exit");
         System.out.println();
         System.out.print("Choice: ");
@@ -46,8 +46,7 @@ public class Recipe
                 recipebook.listAllRecipes();
                 break;
             case 3:
-                recipebook.searchRecipeName();
-                
+                recipebook.printRecipeDetails();
                 break;
             case 4:    
                 recipebook.listByType();

@@ -24,7 +24,7 @@ public class RecipeBook
         System.out.println("What is the recipe name?");
         String recipeName = myobj.nextLine().trim().toLowerCase();
 
-        System.out.println("What type is it? (maindish, appetizer, dessert)");
+        System.out.println("What type is it? (main dish, appetizer, dessert)");
         String type = myobj.nextLine().trim().toLowerCase();
         Recipe recipe = new Recipe(recipeName, type);
         System.out.println("Enter ingredients (type 'done' to finish):");
@@ -75,7 +75,7 @@ public class RecipeBook
     //Giuliano
     public void showBookDetails() {
         System.out.println("Recipe Book Details");
-        System.out.println("Authour: Giuliano Di Fulvio & Daniel Corcuera Lodico");
+        System.out.println("Author: Giuliano Di Fulvio & Daniel Corcuera Lodico");
         System.out.println("Date Created: December 10th, 2025");
         System.out.println("Total Recipes: " + recipes.size());
     }
@@ -95,7 +95,7 @@ public class RecipeBook
         int ratingValue;
         
         while(true){
-            ratingValue = Integer.parseInt(myobj.nextLine().trim());
+            ratingValue = myobj.nextInt();
                 
             if(ratingValue >= 1 && ratingValue <= 5){
                 recipe.setRating(ratingValue);
@@ -134,7 +134,7 @@ public class RecipeBook
     }
       
     //Giuliano
-    public void searchRecipeName() {
+    public void printRecipeDetails() {
       System.out.println("What is the recipe name?");
       String recipeSearch = myobj.nextLine().trim().toLowerCase();
       boolean found = false;
