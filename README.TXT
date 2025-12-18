@@ -1,15 +1,9 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
-------------------------------------------------------------------------
-
-PROJECT TITLE: Recipe project
+PROJECT TITLE: RecipeBook project
 PURPOSE OF PROJECT: store, view, and create recipes
-VERSION or DATE:
+VERSION or DATE: Version 0.0.1
 HOW TO START THIS PROJECT:
 AUTHORS: Guliano Di Fulvio and Daniel Corcuera Lodico
-USER INSTRUCTIONS:
+USER INSTRUCTIONS: Once you're done adding all the ingredients in the recipe please enter 'done', to finish adding.
 
 First Commit : Giuliano Di Fulvio
 Second Commit: Daniel Corcuera Lodico

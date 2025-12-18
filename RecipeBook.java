@@ -52,6 +52,16 @@ public class RecipeBook
         recipes.put(recipeName, recipe);
         System.out.println("Recipe added!");
     }
+    
+    //Giuliano (Unit-Testing)
+    public void addRecipeTest(String recipeName, String type) {
+        recipeName = recipeName.trim().toLowerCase();
+        type = type.trim().toLowerCase();
+
+        Recipe recipe = new Recipe(recipeName, type);
+        recipes.put(recipeName, recipe);
+    }
+
 
     //Daniel
     public void listAllRecipes() {
@@ -106,6 +116,24 @@ public class RecipeBook
         }
         System.out.println("Done!");
     }
+    
+    //Giuliano (Unit-Testing)
+    public boolean rateRecipeTest(String recipeName, int ratingValue) {
+        recipeName = recipeName.trim().toLowerCase();
+        Recipe recipe = recipes.get(recipeName);
+
+        if (recipe == null) {
+            return false;
+        }
+
+        if (ratingValue >= 1 && ratingValue <= 5) {
+            recipe.setRating(ratingValue);
+            return true;
+        }
+
+        return false;
+    }
+    
     
     //Daniel
     public void listTopRated(){
@@ -172,6 +200,22 @@ public class RecipeBook
         }
     }
     
+    //Giuliano (Unit-Testing)
+    public int searchByIngredientTest(String ingredientName) {
+        ingredientName = ingredientName.toLowerCase();
+        int count = 0;
+
+        for (Recipe recipe : recipes.values()) {
+            for (Ingredient ing : recipe.getIngredients()) {
+                if (ing.getName().equals(ingredientName)) {
+                    count++;
+                    break;
+                }
+            }
+        }
+        return count;
+    }
+
     //Giuliano
     public void listByType(){
         System.out.println("Which type do you want to list? Main Dish, Appetizer, or Dessert?");
@@ -187,7 +231,30 @@ public class RecipeBook
         }
     }
     
+    //Giuliano (Unit-Testing)
+    public int countByTypeTest(String type) {
+        type = type.toLowerCase();
+        int count = 0;
+
+        for (Recipe recipe : recipes.values()) {
+            if (recipe.getType().equals(type)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    //Giuliano
     public int getRecipeRating(){
         return rating;
+    }
+    
+    //Giuliano (Unit-Testing)
+    public int getRecipeRatingTest(String recipeName) {
+        Recipe recipe = recipes.get(recipeName.toLowerCase());
+        if (recipe == null) {
+            return -1;
+        }
+        return recipe.getRating();
     }
 }
