@@ -15,6 +15,7 @@ public class Recipe
     private ArrayList<Ingredient> ingredients;
     private int rating;
     private String type;
+    
     public static void main(String[] args){
         boolean run = true;
         Scanner myobj = new Scanner (System.in);

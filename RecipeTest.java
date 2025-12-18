@@ -15,6 +15,7 @@ public class RecipeTest {
     public void setUp() {
         recipe = new Recipe("Pizza", "Main");
     }
+    
     @Test
     public void testGetName() {
         assertEquals("Pizza", recipe.getName());
