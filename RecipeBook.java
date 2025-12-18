@@ -62,7 +62,6 @@ public class RecipeBook
         recipes.put(recipeName, recipe);
     }
 
-
     //Daniel
     public void listAllRecipes() {
         if (recipes.isEmpty()) {
@@ -133,7 +132,6 @@ public class RecipeBook
 
         return false;
     }
-    
     
     //Daniel
     public void listTopRated(){
