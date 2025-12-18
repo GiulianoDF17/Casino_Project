@@ -10,6 +10,7 @@ public class MainDish extends Recipe
 {
     private String spicyness;
     Scanner myobj = new Scanner (System.in);
+    
     public MainDish(String name, String spicyness){
         super(name, "MainDish");
         this.spicyness = spicyness;

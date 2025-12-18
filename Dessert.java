@@ -9,6 +9,7 @@ public class Dessert extends Recipe
 {
     private int sugarGrams;
     Scanner myobj = new Scanner (System.in);
+    
     public Dessert(String name, int sugarGrams){
         super(name, "Dessert");
         this.sugarGrams = sugarGrams;
