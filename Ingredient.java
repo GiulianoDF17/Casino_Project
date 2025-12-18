@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**
  * Write a description of class Ingredient here.
  *
- * @author Giuliano Di Fulvio
+ * @author Giuliano Di Fulvio and Daniel Corcuera Lodico
  * @version (a version number or a date)
  */
 public class Ingredient 
@@ -41,7 +41,7 @@ public class Ingredient
         String ingredientName = myobj.nextLine().trim().toLowerCase();
         return(ingredientName);
     }
-    
+    //Daniel
     public String setMoreNames(){
         System.out.println("Anything else?");
         

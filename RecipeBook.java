@@ -95,7 +95,7 @@ public class RecipeBook
         int ratingValue;
         
         while(true){
-            ratingValue = Integer.parseInt(myobj.nextLine().trim());
+            ratingValue = myobj.nextInt();
                 
             if(ratingValue >= 1 && ratingValue <= 5){
                 recipe.setRating(ratingValue);
