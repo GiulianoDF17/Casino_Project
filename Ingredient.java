@@ -41,6 +41,7 @@ public class Ingredient
         String ingredientName = myobj.nextLine().trim().toLowerCase();
         return(ingredientName);
     }
+    
     //Daniel
     public String setMoreNames(){
         System.out.println("Anything else?");
